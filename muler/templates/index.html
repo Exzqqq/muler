@@ -2,22 +2,22 @@
 {% extends 'base.html' %}
 
 {% block searchbar %}{{ super() }}{% endblock %}
-{% block searchmicrocopy %}<div id="searchmicrocopy"><p>Pick a drug, any drug.</p></div>{% endblock %}
+{% block searchmicrocopy %}<div id="searchmicrocopy"><p>{{ _('Pick a drug, any drug.') }}</p></div>{% endblock %}
 
 
 {% block index %}
 	<section class="cards">
 		<div class="card">
-			<header><h2>&#128218; Quick pharmacology reference <sub>//</sub></h4></header>
-			<p>Takes you straight to the (mechanism of) action. Fuss-free, concise, and no sign-up required.</p>
+			<header><h2>&#128218; {{ _('Quick pharmacology reference') }} <sub>//</sub></h4></header>
+			<p>{{ _('Takes you straight to the (mechanism of) action. Fuss-free, concise, and no sign-up required.') }}</p>
 		</div>
 		<div class="card">
-			<header><h2>&#128300; More than 13,000 drugs indexed <sub>//</sub></h4></header>
-			<p class=>Sourced from <a href="https://go.drugbank.com/" target="_blank">DrugBank</a>, a leading bioinformatics and chemoinformatics database.</p>
+			<header><h2>&#128300; {{ _('More than 13,000 drugs indexed') }} <sub>//</sub></h4></header>
+			<p class=>{{ _('Sourced from') }} <a href="https://go.drugbank.com/" target="_blank">DrugBank</a>, {{ _('a leading bioinformatics and chemoinformatics database.') }}</p>
 		</div>
 		<div class="card">
-			<header><h2>&#128176; Absolutely free to use, forever <sub>//</sub></h4></header>
-			<p>Save your money for all the textbooks, question banks, and equipment. This one's on the house.</p>
+			<header><h2>&#128176; {{ _('Absolutely free to use, forever') }} <sub>//</sub></h4></header>
+			<p>{{ _('Save your money for all the textbooks, question banks, and equipment. This one\'s on the house.') }}</p>
 		</div>
 	</section>
 {% endblock %}

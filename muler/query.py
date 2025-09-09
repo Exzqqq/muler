@@ -9,14 +9,17 @@ import muler.config as config
 
 def db_session():
     '''Establish a connection to the database'''
-    db_url = config.db_config['local_mysql_db'] # Change this when deploying
-    # Set pool_recycle to < 300 to avoid disconnection errors.
-    # See https://help.pythonanywhere.com/pages/UsingSQLAlchemywithMySQL
-    engine = create_engine(db_url, echo=False, pool_recycle=280, connect_args={'connect_timeout': 1000}, pool_pre_ping=True)
-    '''
-    Session = sessionmaker(bind=engine)
-    session = Session()
-    '''
+    db_url = config.db_config['mysql_db'] # Use mysql_db which checks DATABASE_URL env var
+    # Create engine with appropriate parameters based on database type
+    if 'sqlite' in db_url:
+        engine = create_engine(db_url, echo=False, connect_args={'check_same_thread': False})
+    elif 'mysql' in db_url:
+        # MySQL specific parameters
+        engine = create_engine(db_url, echo=False, pool_recycle=280, pool_pre_ping=True)
+    else:
+        # Default parameters
+        engine = create_engine(db_url, echo=False)
+    
     session = scoped_session(sessionmaker(bind=engine, autocommit=False, autoflush=False))
     return session
 

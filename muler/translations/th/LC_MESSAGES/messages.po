@@ -1,0 +1,108 @@
+# Thai translations for PROJECT.
+# Copyright (C) 2025 ORGANIZATION
+# This file is distributed under the same license as the PROJECT project.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PROJECT VERSION\n"
+"Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
+"POT-Creation-Date: 2025-09-09 15:14+0700\n"
+"PO-Revision-Date: 2025-09-09 15:03+0700\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: th\n"
+"Language-Team: th <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.17.0\n"
+
+#: muler/templates/base.html:35
+msgid "Mode: Light / Dark"
+msgstr "โหมด: สว่าง / มืด"
+
+#: muler/templates/base.html:40
+msgid "Home"
+msgstr "หน้าแรก"
+
+#: muler/templates/base.html:41
+msgid "About"
+msgstr "เกี่ยวกับ"
+
+#: muler/templates/base.html:52
+msgid "Enter drug name e.g. aspirin"
+msgstr "ใส่ชื่อยา เช่น แอสไพริน"
+
+#: muler/templates/base.html:62
+msgid "Legal"
+msgstr "กฎหมาย"
+
+#: muler/templates/index.html:5
+msgid "Pick a drug, any drug."
+msgstr "เลือกยาสักตัว"
+
+#: muler/templates/index.html:11
+msgid "Quick pharmacology reference"
+msgstr "ข้อมูลเภสัชวิทยาด่วน"
+
+#: muler/templates/index.html:12
+msgid ""
+"Takes you straight to the (mechanism of) action. Fuss-free, concise, and "
+"no sign-up required."
+msgstr "นำคุณไปสู่กลไกการทำงานของยาโดยตรง กระชับ ไม่ยุ่งยาก และไม่ต้องสมัครสมาชิก"
+
+#: muler/templates/index.html:15
+msgid "More than 13,000 drugs indexed"
+msgstr "ข้อมูลยามากกว่า 13,000 รายการ"
+
+#: muler/templates/index.html:16
+msgid "Sourced from"
+msgstr "ข้อมูลจาก"
+
+#: muler/templates/index.html:16
+msgid "a leading bioinformatics and chemoinformatics database."
+msgstr "ฐานข้อมูลชีวสารสนเทศและเคมีสารสนเทศชั้นนำ"
+
+#: muler/templates/index.html:19
+msgid "Absolutely free to use, forever"
+msgstr "ใช้งานฟรีตลอดไป"
+
+#: muler/templates/index.html:20
+msgid ""
+"Save your money for all the textbooks, question banks, and equipment. "
+"This one's on the house."
+msgstr "เก็บเงินไว้ซื้อตำรา ข้อสอบ และอุปกรณ์ ส่วนนี้เราให้ฟรี"
+
+#: muler/templates/result.html:9
+msgid "Showing results for"
+msgstr "แสดงผลลัพธ์สำหรับ"
+
+#: muler/templates/result.html:10
+msgid "Did you mean:"
+msgstr "คุณหมายถึง:"
+
+#: muler/templates/result.html:19
+msgid "Content translated from English using Google Translate"
+msgstr "เนื้อหาแปลจากภาษาอังกฤษโดย Google Translate"
+
+#: muler/templates/result.html:23
+msgid "Indication"
+msgstr "ข้อบ่งใช้"
+
+#: muler/templates/result.html:25
+msgid "Pharmacodynamics"
+msgstr "เภสัชพลศาสตร์"
+
+#: muler/templates/result.html:27
+msgid "Mechanism of action"
+msgstr "กลไกการทำงาน"
+
+#: muler/templates/result.html:29
+msgid "Synonyms"
+msgstr "ชื่อพ้อง"
+
+#: muler/templates/result.html:31
+msgid "Products"
+msgstr "ผลิตภัณฑ์"
+

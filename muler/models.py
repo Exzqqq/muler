@@ -14,9 +14,16 @@ from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import relationship
 import muler.config as config
 
-engine = create_engine(config.db_config['local_mysql_db'], echo=False)
+# Create engine with appropriate parameters based on database type
+db_url = config.db_config['local_mysql_db']
+if 'sqlite' in db_url:
+    engine = create_engine(db_url, echo=False, connect_args={'check_same_thread': False})
+elif 'mysql' in db_url:
+    engine = create_engine(db_url, echo=False, pool_recycle=280, pool_pre_ping=True)
+else:
+    engine = create_engine(db_url, echo=False)
 
-Base = declarative_base(engine)
+Base = declarative_base()
 
 class Pharm(Base):
     __tablename__ = 'pharm'

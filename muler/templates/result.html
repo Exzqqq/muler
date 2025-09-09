@@ -1,36 +1,49 @@
-<!doctype html>
-{% extends 'base.html' %}
-{% block searchbar %}{{ super() }}{% endblock %}
+<!DOCTYPE html>
+{% extends 'base.html' %} {% block searchbar %}{{ super() }}{% endblock %} {%
+block content %} {% if results %} {% if suggestions %}
+<p>{{ _('Showing results for') }} '{{ suggestions[0] }}'.</p>
+<p>{{ _('Did you mean:') }}</p>
+{% for i in suggestions[1:] %}
+<a href="/{{ i }}">{{ i }}</a>
+{% endfor %} {% endif %}
 
-
-{% block content %}
-  {% if results %}
-    {% if suggestions %}
-      <p>Showing results for '{{ suggestions[0] }}'.</p>
-      <p>Did you mean: </p>
-        {% for i in suggestions[1:] %}
-          <a href='/{{ i }}'>{{ i }}</a>
-        {% endfor %}
-    {% endif %}
-
-    <h1 class="drugname">{{ name }} 💊</h1>
-    <p>{{ d_class }}<p>
-    <h2 class="label"><mark>Indication</mark></h2>
-    <p>{{ ind | safe }}</p>
-    <h2 class="label"><mark>Pharmacodynamics</mark></h2>
-    <p>{{ pd | safe }}</P>
-    <h2 class="label"><mark>Mechanism of action</mark></h2>
-    <p>{{ mech | safe}}</P>
-    <button class="accordion">Synonyms</button>
-    <div class="panel">{{ synonyms }}</div>
-    <button class="accordion">Products</button>
-    <div class="panel">{{ products }}</div>
-    <p><a href="https://go.drugbank.com/drugs/{{ drugbank_id[0][0] }}" target="_blank" class="outbound">→ DrugBank</a></p>
-  {% endif %}
+<h1 class="drugname">{{ name }} 💊</h1>
+{% if current_lang == 'th' %}
+<div class="translation-notice">
+  <small
+    >🌍 {{ _('Content translated from English using Google Translate') }}</small
+  >
+</div>
+{% endif %}
+<p>{{ d_class }}</p>
+<p></p>
+<h2 class="label"><mark>{{ _('Indication') }}</mark></h2>
+<p>{{ ind | safe }}</p>
+<h2 class="label"><mark>{{ _('Pharmacodynamics') }}</mark></h2>
+<p>{{ pd | safe }}</p>
+<h2 class="label"><mark>{{ _('Mechanism of action') }}</mark></h2>
+<p>{{ mech | safe}}</p>
+<button class="accordion">{{ _('Synonyms') }}</button>
+<div class="panel">{{ synonyms }}</div>
+<button class="accordion">{{ _('Products') }}</button>
+<div class="panel">{{ products }}</div>
+<p>
+  <a
+    href="https://go.drugbank.com/drugs/{{ drugbank_id[0][0] }}"
+    target="_blank"
+    class="outbound"
+    >→ DrugBank</a
+  >
+</p>
+{% endif %} {% endblock %} {% block drugbank %}
+<div id="terms">
+  <p>
+    Terms of use: The displayed information is licensed under a
+    <a href="https://creativecommons.org/licenses/by-nc/4.0/legalcode"
+      >CC BY-NC 4.0 license.</a
+    >
+    It is attributed to
+    <a href="https://go.drugbank.com/" target="_blank">DrugBank</a>.
+  </p>
+</div>
 {% endblock %}
-
-{% block drugbank %}
-    <div id="terms"><p>Terms of use: The displayed information is licensed under a <a href="https://creativecommons.org/licenses/by-nc/4.0/legalcode">CC BY-NC 4.0 license.</a> It is attributed to <a href="https://go.drugbank.com/" target="_blank">DrugBank</a>.</p></div>
-{% endblock %}
-
-

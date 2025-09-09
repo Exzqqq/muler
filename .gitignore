@@ -36,4 +36,7 @@ pip-delete-this-directory.txt
 instance/
 .webassets-cache
 
+# Environment variables
+.env
+
 
