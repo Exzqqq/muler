@@ -1,5 +1,3 @@
-version: "3.8"
-
 services:
   mysql:
     image: mysql:8.0
@@ -18,7 +16,7 @@ services:
     networks:
       - muler_network
     healthcheck:
-      test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
+      test: ["CMD", "mysqladmin", "ping", "-h", "localh ost"]
       timeout: 20s
       retries: 10
 
@@ -39,9 +37,12 @@ services:
     networks:
       - muler_network
 
-  # Flask Application
   flask_app:
-    build: .
+    build:
+      context: .
+      tags:
+        - "exzqqq/muler_flask:latest"
+    image: exzqqq/muler_flask:latest
     container_name: muler_flask
     restart: unless-stopped
     environment:
